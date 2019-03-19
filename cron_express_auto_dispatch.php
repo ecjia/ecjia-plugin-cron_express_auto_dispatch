@@ -73,8 +73,9 @@ class plugin_cron_express_auto_dispatch {
 }
 
 Ecjia_PluginManager::extend('cron_express_auto_dispatch', function() {
+    RC_Locale::loadPluginTextdomain('cron_express_auto_dispatch');
     require_once RC_Plugin::plugin_dir_path(__FILE__) . 'cron_express_auto_dispatch.class.php';
-        return new cron_express_auto_dispatch();
+    return new cron_express_auto_dispatch();
 });
 
 RC_Plugin::register_activation_hook(__FILE__, array('plugin_cron_express_auto_dispatch', 'install'));
